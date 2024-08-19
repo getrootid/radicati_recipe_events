@@ -1,0 +1,181 @@
+uuid: ca3f50df-f705-4871-a2ba-34d256f83c55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_event__date
+    - field.field.node.event.field_featured_image
+    - field.field.node.event.field_formatted_content
+    - field.field.node.event.field_summary
+    - field.field.node.event.field_tags
+    - node.type.event
+  module:
+    - field_group
+    - media_library
+    - path
+    - smart_date
+    - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_title_and_meta
+        - group_main_content
+      label: Content
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_title_and_meta:
+      children:
+        - title
+        - field_summary
+        - field_featured_image
+        - field_event__date
+        - field_tags
+      label: 'Title and Meta'
+      region: content
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_main_content:
+      children:
+        - field_formatted_content
+      label: 'Main Content'
+      region: content
+      parent_name: group_content
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event__date:
+    type: smartdate_timezone
+    weight: 4
+    region: content
+    settings:
+      modal: false
+      default_tz: ''
+      custom_tz: ''
+      allowed_timezones: {  }
+      default_duration: 60
+      default_duration_increments: |-
+        30
+        60|1 hour
+        90
+        120|2 hours
+        custom
+      show_extra: false
+      hide_date: true
+      allday: true
+      remove_seconds: false
+      separator: to
+      add_abbreviations: ''
+    third_party_settings: {  }
+  field_featured_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_formatted_content:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_summary:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

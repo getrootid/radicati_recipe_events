@@ -1,0 +1,16 @@
+{
+  "name": "getrootid/radicati-recipe-events",
+  "description": "Basic event management setup for Radicati sites.",
+  "type": "drupal-recipe",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Jason Mickela"
+    }
+  ],
+  "require": {
+    "drupal/smart_date": "*",
+    "drupal/paragraphs": "*",
+    "drupal/field_group": "*"
+  }
+}
