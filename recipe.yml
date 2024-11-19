@@ -1,9 +1,6 @@
 name: 'Radicati Events'
-description: 'Adding for radicati site adding Event content type.'
+description: 'Adding for radicati site adding Event content type. Some requirements are not included here to maintain after the fact applying of this recipe.'
 type: 'Content'
-recipes:
-  - radicati-recipe-content-base
-  - radicati-recipe-admin
 install:
   - field
   - field_ui
@@ -22,11 +19,4 @@ install:
   - taxonomy
 config:
   import:
-    field: "*"
-    field_ui: "*"
-    text: "*"
-    text_field_formatter: "*"
-    paragraphs: "*"
-    field_group: "*"
-    taxonomy: "*"
     smart_date: "*"
